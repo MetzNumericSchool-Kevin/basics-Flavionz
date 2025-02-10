@@ -100,3 +100,25 @@ let potionSoin = {
 console.log(potionSoin);
 console.log(potionSoin.nom);
 console.log(potionSoin["prix"]);
+
+// Inventaire complet des potions
+
+let inventaire = [
+  { nom: "Potion de soin", prix: 40, stock: 1 },
+  { nom: "Potion d'endurance", prix: 20, stock: 1 },
+  { nom: "Potion de mana", prix: 20, stock: 2 },
+];
+
+for (let potion of inventaire) {
+  console.log(
+    `Nom: ${potion.nom}, Prix: ${potion.prix} ${monnaie}, Stock: ${potion.stock}`
+  );
+}
+
+// Affichage dynamique des propriétés
+
+for (let potion of inventaire) {
+  for (let [key, value] of Object.entries(potion)) {
+    console.log(`${key}: ${value}`);
+  }
+}
