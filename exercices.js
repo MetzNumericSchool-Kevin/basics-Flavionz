@@ -44,3 +44,13 @@ switch (choix) {
       "Mh... Désolé aventurier, je ne comprends pas ce que tu souhaites. Refais ton choix ! 😕"
     );
 }
+
+// Calcul du prix total d'une commande
+
+let quantitePotion = parseInt(
+  prompt("Combien de potions de soin veux-tu acheter ?")
+);
+let prixTotal = quantitePotion * prixPotionSoin;
+console.log(
+  `Prix de ${quantitePotion} potions de soins : ${prixTotal} ${monnaie} mon cher Aventurier. 💸`
+);
