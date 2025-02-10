@@ -72,3 +72,10 @@ if (bourseAventurier >= prixTotal && quantitePotion <= stockPotionSoin) {
 // Liste des potions
 let potions = ["Potion de soin", "Potion d'endurance", "Potion de mana"];
 console.log(potions);
+
+// Affichage des potions
+console.log(`Première potion : ${potions[0]}`);
+console.log(`Dernière potion : ${potions[potions.length - 1]}`);
+for (let potion of potions) {
+  console.log(`Nous avons de la ${potion} !`);
+}
