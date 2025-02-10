@@ -54,3 +54,17 @@ let prixTotal = quantitePotion * prixPotionSoin;
 console.log(
   `Prix de ${quantitePotion} potions de soins : ${prixTotal} ${monnaie} mon cher Aventurier. 💸`
 );
+
+// Bourse de l'aventurier
+let bourseAventurier = 100;
+if (bourseAventurier >= prixTotal && quantitePotion <= stockPotionSoin) {
+  bourseAventurier -= prixTotal;
+  stockPotionSoin -= quantitePotion;
+  console.log(
+    `Achat réussi ! Il vous reste ${bourseAventurier} ${monnaie} et ${stockPotionSoin} potions en stock.`
+  );
+} else {
+  console.log(
+    "Achat impossible : soit vous n'avez pas assez d'argent, soit le stock est insuffisant."
+  );
+}
