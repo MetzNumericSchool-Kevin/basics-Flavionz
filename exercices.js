@@ -122,3 +122,52 @@ for (let potion of inventaire) {
     console.log(`${key}: ${value}`);
   }
 }
+
+// Programme de commerce
+
+let bourseSorcier = 0;
+let inventaireAventurier = [];
+do {
+  let action = prompt("Que veux-tu faire ? (acheter/vendre)");
+  if (action === "acheter") {
+    let choixPotion = prompt("Quelle potion veux-tu acheter ?");
+    let quantite = parseInt(prompt("Combien en veux-tu ?"));
+    let potion = inventaire.find((p) => p.nom === choixPotion);
+    if (
+      potion &&
+      potion.stock >= quantite &&
+      bourseAventurier >= potion.prix * quantite
+    ) {
+      potion.stock -= quantite;
+      bourseAventurier -= potion.prix * quantite;
+      bourseSorcier += potion.prix * quantite;
+      inventaireAventurier.push({ nom: potion.nom, quantite: quantite });
+      console.log(
+        `Achat réussi ! Il vous reste ${bourseAventurier} ${monnaie}.`
+      );
+    } else {
+      console.log("Achat impossible.");
+    }
+  } else if (action === "vendre") {
+    if (inventaireAventurier.length > 0) {
+      let chiffre = Math.floor(Math.random() * 5) + 1;
+      let devine = parseInt(
+        prompt("Devine un chiffre entre 1 et 5 pour vendre ta potion")
+      );
+      if (devine === chiffre) {
+        let potionVendue = inventaireAventurier.pop();
+        let potionStock = inventaire.find((p) => p.nom === potionVendue.nom);
+        bourseAventurier += potionStock.prix * potionVendue.quantite;
+        bourseSorcier -= potionStock.prix * potionVendue.quantite;
+        potionStock.stock += potionVendue.quantite;
+        console.log("Vente réussie !");
+      } else {
+        console.log("Raté ! Retente ta chance.");
+      }
+    } else {
+      console.log("Tu n'as rien à vendre.");
+    }
+  }
+} while (bourseAventurier > 0);
+
+console.log(`Le sorcier a maintenant ${bourseSorcier} ${monnaie}.`);
