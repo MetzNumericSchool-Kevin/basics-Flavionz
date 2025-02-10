@@ -68,3 +68,7 @@ if (bourseAventurier >= prixTotal && quantitePotion <= stockPotionSoin) {
     "Achat impossible : soit vous n'avez pas assez d'argent, soit le stock est insuffisant."
   );
 }
+
+// Liste des potions
+let potions = ["Potion de soin", "Potion d'endurance", "Potion de mana"];
+console.log(potions);
