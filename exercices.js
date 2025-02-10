@@ -56,6 +56,7 @@ console.log(
 );
 
 // Bourse de l'aventurier
+
 let bourseAventurier = 100;
 if (bourseAventurier >= prixTotal && quantitePotion <= stockPotionSoin) {
   bourseAventurier -= prixTotal;
@@ -70,10 +71,12 @@ if (bourseAventurier >= prixTotal && quantitePotion <= stockPotionSoin) {
 }
 
 // Liste des potions
+
 let potions = ["Potion de soin", "Potion d'endurance", "Potion de mana"];
 console.log(potions);
 
 // Affichage des potions
+
 console.log(`Première potion : ${potions[0]}`);
 console.log(`Dernière potion : ${potions[potions.length - 1]}`);
 for (let potion of potions) {
@@ -81,7 +84,19 @@ for (let potion of potions) {
 }
 
 // Ajout et suppression d'une potion
+
 potions.push("Potion de force");
 console.log(potions);
 potions.pop();
 console.log(potions);
+
+// Objet Potion de soin
+
+let potionSoin = {
+  nom: "Potion de soin",
+  prix: prixPotionSoin,
+  stock: stockPotionSoin,
+};
+console.log(potionSoin);
+console.log(potionSoin.nom);
+console.log(potionSoin["prix"]);
