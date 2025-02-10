@@ -79,3 +79,9 @@ console.log(`Dernière potion : ${potions[potions.length - 1]}`);
 for (let potion of potions) {
   console.log(`Nous avons de la ${potion} !`);
 }
+
+// Ajout et suppression d'une potion
+potions.push("Potion de force");
+console.log(potions);
+potions.pop();
+console.log(potions);
